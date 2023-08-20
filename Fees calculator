@@ -7,8 +7,8 @@ import pyodbc
 from tkcalendar import Calendar,DateEntry
 from tkinter import messagebox
 
-
-connection_string= f'DRIVER={{SQL Server}};SERVER=AHBAR;DATABASE=master;Trusted_Connection=yes;'
+#### while running the code don't run these 3 lines:11,12,13
+connection_string= f'DRIVER={{SQL Server}};SERVER=AHBAR;DATABASE=master;Trusted_Connection=yes;
 connection = pyodbc.connect(connection_string)
 cursor = connection.cursor()
 
@@ -29,7 +29,7 @@ def Signup_page ():
     main_canvas_2.pack_forget()
     frame_main_3.pack_forget()
     main_canvas_3.pack_forget()
-user_logged_in = False
+
 def LOGIN_page():
     LOGIN_FRAME.pack()
     LOGIN_CANVAS.pack()
@@ -202,13 +202,13 @@ Phone_number_STUDENT=[]
 def SIGNUP_BUTTON():
      
 
-    query='SELECT * FROM LOGIN_DETAILS'
-    cursor.execute(query)
+    query='SELECT * FROM LOGIN_DETAILS' # don't run this
+    cursor.execute(query) # don't run this
 
-    rows = cursor.fetchall()
-    for row in rows:
-        EMAIL_STUDENT.append(row[3])
-        Phone_number_STUDENT.append(row[4])
+    rows = cursor.fetchall() # don't run this
+    for row in rows: # don't run this
+        EMAIL_STUDENT.append(row[3]) # don't run this
+        Phone_number_STUDENT.append(row[4]) # don't run this
         
     
   
@@ -230,7 +230,7 @@ def SIGNUP_BUTTON():
         messagebox.showerror("Error", "EMAIL OR PHONE ALREADY EXISTS.")
     
 
-    else:
+    else: # don't run this
         EMAIL_STUDENT.append(c)
         Phone_number_STUDENT.append(int(d))
        
@@ -242,7 +242,7 @@ def SIGNUP_BUTTON():
 
         
 
-       #####
+       
         Entry_box_1_SIGNUP.delete(0,END)
         Entry_box_2_SIGNUP.delete(0,END)
         Entry_box_3_SIGNUP.delete(0,END)
@@ -292,13 +292,13 @@ PASSWORD=[]
 
 
 def LOGIN_BUTTON():
-    query='SELECT * FROM LOGIN_DETAILS'
-    cursor.execute(query)
+    query='SELECT * FROM LOGIN_DETAILS' # don't run this
+    cursor.execute(query) # don't run this
 
-    rows = cursor.fetchall()
-    for row in rows:
-        USER_NAME.append(row[1])
-        PASSWORD.append(row[2])
+    rows = cursor.fetchall() # don't run this
+    for row in rows: # don't run this
+        USER_NAME.append(row[1]) # don't run this
+        PASSWORD.append(row[2]) # don't run this
         
     
   
@@ -362,9 +362,9 @@ LOGIN_FRAME=tk.Frame(root)
 
 
 
-#importing  image 
-#image_1=tk.PhotoImage(file="C:/Users/ahbar/OneDrive/Desktop/test folder/button.png")
-#image_2=tk.PhotoImage(file="c:/Users/ahbar/me learning/calculator.png")
+#importing  image  # don't run this
+#image_1=tk.PhotoImage(file="C:/Users/ahbar/OneDrive/Desktop/test folder/button.png") # don't run this
+#image_2=tk.PhotoImage(file="c:/Users/ahbar/me learning/calculator.png")# don't run this
 
 
 
@@ -372,12 +372,12 @@ LOGIN_FRAME=tk.Frame(root)
 main_canvas=tk.Canvas(frame_main_page_1,width=1700,height=1500,bg='white', highlightbackground="black",highlightthickness=5)
 main_canvas.create_text(750,20,text='COLLEGE FEES CALCULATOR',font=('Helvetica 18 bold underline '))
 
-# code for scrollbar
-scrollbar=ttk.Scrollbar(frame_main_page_1,orient='vertical',command=main_canvas.yview)
-scrollable_frame=ttk.Frame(main_canvas)
-scrollable_frame.bind("<Configure>",lambda e:main_canvas.configure(scrollregion= main_canvas.bbox('all')))
-main_canvas.create_window((0,0),window=scrollable_frame,anchor ='nw')
-main_canvas.configure(yscrollcommand=scrollbar.set)
+# code for scrollbar  # don't run this
+scrollbar=ttk.Scrollbar(frame_main_page_1,orient='vertical',command=main_canvas.yview)  # don't run this
+scrollable_frame=ttk.Frame(main_canvas)  # don't run this
+scrollable_frame.bind("<Configure>",lambda e:main_canvas.configure(scrollregion= main_canvas.bbox('all')))  # don't run this
+main_canvas.create_window((0,0),window=scrollable_frame,anchor ='nw')  # don't run this
+main_canvas.configure(yscrollcommand=scrollbar.set)  # don't run this
 
 #creating a canvas inside another canvas for page
 c=tk.Canvas(main_canvas,width=1200,height=850,bg='light grey',highlightbackground="black",highlightthickness=3)
