@@ -616,8 +616,31 @@ menubar.add_cascade(label="LOGIN",menu=Login_menu)
 
 
 
+#YOUR UNIVERSITIES LIST PAGE
+root = tk.Tk()
+root.geometry("1800x1800")
+root.title("College Fees Calculator")
+root.configure(bg='SeaGreen3')
+label=tk.Label(root, fg="white", bg='SeaGreen3', text="Your University List", font=("Georgia", 60))
+label.pack(padx=20, pady=20)
 
+#DISPLAY DATABASE
+tree = ttk.Treeview(root)
+df = pd.DataFrame(data) #Add data of database
+tree["columns"] = list(df.columns)
+print(df.columns)
 
+for col in df.columns:
+    tree.heading(col, text=col)
+    tree.column(col, width=100)
+
+print(df.iterrows)
+
+for index, row in df.iterrows():
+    tree.insert("", "end", values=list(row))
+
+tree.pack(fill="both", expand=True)
+root.mainloop()
 
 
 #packing 
