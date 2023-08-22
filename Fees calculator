@@ -56,12 +56,11 @@ def page_3():
 
 
 
-def back_page1():
+def back_buttons():
     frame_main_2.pack_forget()
     main_canvas_2.pack_forget()
-    main_canvas.pack()
-    frame_main_page_1.pack()
-
+    AFTER_LOGIN_CANVAS.pack()
+    AFTER_LOGIN_FRAME.pack()
 
 
 
@@ -259,6 +258,12 @@ def LOGOUT_page():
     frame_main_2.pack_forget()
     frame_main_3.pack_forget()
     main_canvas_3.pack_forget()
+    AFTER_LOGIN_FRAME.pack_forget()
+    AFTER_LOGIN_CANVAS.pack_forget()
+    VIEW_FRAME.pack_forget()
+    VIEW_FRAME.pack_forget()
+    
+
     
     
     main_canvas.pack()
@@ -282,6 +287,7 @@ def LOGOUT_page():
 
     Login_menu.add_command(label="LOGIN",command= LOGIN_page)
     menubar.add_cascade(label="LOGIN",menu=Login_menu)
+
 
 
 
@@ -339,6 +345,32 @@ def  Back_FROM_LOGIN_MAINPAGE():
     main_canvas.pack()
     frame_main_page_1.pack()
 
+### AFTER_LOGIN_PAGE
+
+def SEARCH():
+    AFTER_LOGIN_FRAME.pack_forget()
+    AFTER_LOGIN_CANVAS.pack_forget()
+    main_canvas_2.pack()
+    frame_main_2.pack()
+    
+    
+
+
+
+def VIEW_HISTORY():
+    AFTER_LOGIN_CANVAS.pack_forget()
+    AFTER_LOGIN_FRAME.pack_forget()
+    VIEW_FRAME.pack()
+    VIEW_CANVAS.pack()
+    
+
+def BACK_PAGE_BUTTONS():
+    
+    VIEW_FRAME.pack_forget()
+    VIEW_CANVAS.pack_forget()
+
+    AFTER_LOGIN_CANVAS.pack()
+    AFTER_LOGIN_FRAME.pack()
 
 
 
@@ -358,7 +390,8 @@ frame_about=tk.Frame(root)
 frame_main_2=tk.Frame(root)
 SIGNUP_FRAME=tk.Frame(root)
 LOGIN_FRAME=tk.Frame(root)
-
+AFTER_LOGIN_FRAME=tk.Frame(root)
+VIEW_FRAME=tk.Frame(root)
 
 
 
@@ -437,6 +470,7 @@ btn_next_3=tk.Button(canva_2,text='Next',command = page_3).place(x=635,y=700)
 canva_2.create_text(625,685,text='Page 2',fill='black', font=('Helvetica 12'))
 
 canva_2.place(x=150,y=50)
+btn_back_page_buttons=tk.Button(canva_2,text='Back',command = back_buttons).place(x=580,y=700)
 main_canvas_2.pack()
 
 
@@ -540,6 +574,8 @@ Back_FROM_SIGNUP=tk.Button(SIGNUP_CANVAS,text='BACK',command= Back_FROM_SIGNUP_M
 
 ####### LOGIN CANVAS
 LOGIN_CANVAS =tk.Canvas(LOGIN_FRAME,width=1700,height=1500,bg='light grey',highlightbackground="black",highlightthickness=5)
+LOGIN_CANVAS.create_text(750,20,text='Login Page',font=('Helvetica 18 bold underline' ))
+
 
 LOGIN_CANVAS.create_text(400,100,text="USER NAME",font='Helvetica 15')
 LOGIN_CANVAS.create_text(400,200,text="PASSWORD",font='Helvetica 15')
@@ -554,6 +590,26 @@ Entry_box_2_LOGIN.place(x=500,y=200)
 LOGIN_BUTTON=tk.Button(LOGIN_CANVAS,text='LOGIN UP',command= LOGIN_BUTTON).place(x=700,y=700)
 
 Back_FROM_LOGIN=tk.Button(LOGIN_CANVAS,text='BACK',command= Back_FROM_LOGIN_MAINPAGE).place(x=850,y=700)
+
+
+###### two button canvas
+AFTER_LOGIN_CANVAS=tk.Canvas(AFTER_LOGIN_FRAME,width=1700,height=1500,bg='green', highlightbackground="black",highlightthickness=5)
+
+
+
+
+VIEW=tk.Button(AFTER_LOGIN_CANVAS,text='VIEW HISTORY',command = VIEW_HISTORY,width=50,height=10).place(x=550,y=200)
+ADD_RECORD=tk.Button(AFTER_LOGIN_CANVAS,text='SEARCH',command = SEARCH,width=50,height=10).place(x=550,y=500)
+
+
+###  VIEW
+
+VIEW_CANVAS=tk.Canvas(VIEW_FRAME,width=1700,height=1500,bg='green', highlightbackground="black",highlightthickness=5)
+
+VIEW_CANVAS.create_text(750,20,text='SEARCH HISTORY',font=('Helvetica 18 bold underline' ))
+
+BACK_BUTTONS_PAGE=tk.Button(VIEW_CANVAS,text='BACK',command=BACK_PAGE_BUTTONS).place(x=750,y=700)
+
 
 
 
